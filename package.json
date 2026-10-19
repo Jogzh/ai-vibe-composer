@@ -1,0 +1,60 @@
+{
+  "name": "music-creation-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Open-source music creation toolkit: Tone.js / Web Audio, Python DSP, licensed samples, CC0 loops and MP3/WAV export. 开源音乐创作工具箱。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jogzh/music-creation-toolkit.git"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
+    "test:browser": "node scripts/check-browser.mjs",
+    "test:palette": "node scripts/check-palette.mjs",
+    "check": "npm test && npm run build",
+    "render": "node scripts/render.mjs",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "assets:catalog": "node scripts/catalog-assets.mjs",
+    "assets:check": "node scripts/catalog-assets.mjs --check"
+  },
+  "dependencies": {
+    "tone": "15.1.22"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "playwright": "1.64.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.4"
+  },
+  "keywords": [
+    "music-creation",
+    "music-production",
+    "generative-music",
+    "tonejs",
+    "web-audio",
+    "python",
+    "audio-dsp",
+    "sound-design",
+    "sample-library",
+    "cc0",
+    "drum-loops",
+    "synthesizer",
+    "音乐创作",
+    "声音资产",
+    "编曲模板",
+    "音频处理"
+  ],
+  "homepage": "https://github.com/Jogzh/music-creation-toolkit#readme",
+  "bugs": {
+    "url": "https://github.com/Jogzh/music-creation-toolkit/issues"
+  }
+}

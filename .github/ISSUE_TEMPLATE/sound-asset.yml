@@ -1,0 +1,20 @@
+name: 声音资产 / Sound asset
+description: 提交可复用声音与来源 / Suggest reusable sounds and provenance
+title: "[Sound] "
+body:
+  - type: textarea
+    attributes:
+      label: 声音与用途 / Sound and use
+      description: 乐器、音高、BPM、循环长度与适用场景。
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 作者、来源和许可 / Author, source and license
+      description: 提供原始 URL、明确的再分发许可及处理说明。
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 验证与耳听 / Validation and listening
+      description: 分开记录测量、自动检查与实际试听结果。
