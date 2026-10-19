@@ -4,7 +4,7 @@ import type { TrackDefinition } from '../music/types.ts';
 export const starter: TrackDefinition = {
   meta: {
     id: 'starter', title: '你的创作起点', subtitle: 'YOUR FIRST SKETCH',
-    artist: 'Music Creation Toolkit', bpm: 120, key: 'C major',
+    artist: 'AI Vibe Composer', bpm: 120, key: 'C major',
     tags: ['EDITABLE TEMPLATE', 'TONE.JS', 'ORIGINAL WORKSPACE'],
     description: '一个可编辑的八小节练习模板：替换音符、和弦与段落，选择音色，再试听和导出你自己的作品。An editable eight-bar sketch for your own music.',
   },

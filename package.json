@@ -1,13 +1,13 @@
 {
-  "name": "music-creation-toolkit",
+  "name": "ai-vibe-composer",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Open-source music creation toolkit: Tone.js / Web Audio, Python DSP, licensed samples, CC0 loops and MP3/WAV export. 开源音乐创作工具箱。",
+  "description": "AI-assisted music composition with coding agents: write melodies and arrangements in TypeScript, use licensed sounds, render WAV/MP3 with Tone.js and Python DSP. Vibe 作曲：AI 辅助编曲与音频生成。",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jogzh/music-creation-toolkit.git"
+    "url": "https://github.com/Jogzh/ai-vibe-composer.git"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -36,25 +36,34 @@
     "vite": "6.4.4"
   },
   "keywords": [
-    "music-creation",
-    "music-production",
+    "ai-music",
+    "ai-composer",
+    "ai-composition",
+    "ai-music-generation",
+    "vibe-coding",
+    "vibe-composing",
+    "music-generation",
+    "algorithmic-composition",
+    "ai-agents",
     "generative-music",
     "tonejs",
     "web-audio",
+    "typescript",
     "python",
     "audio-dsp",
     "sound-design",
     "sample-library",
     "cc0",
-    "drum-loops",
-    "synthesizer",
+    "bgm",
+    "AI作曲",
+    "AI音乐生成",
+    "Vibe作曲",
+    "智能编曲",
     "音乐创作",
-    "声音资产",
-    "编曲模板",
-    "音频处理"
+    "声音资产"
   ],
-  "homepage": "https://github.com/Jogzh/music-creation-toolkit#readme",
+  "homepage": "https://github.com/Jogzh/ai-vibe-composer#readme",
   "bugs": {
-    "url": "https://github.com/Jogzh/music-creation-toolkit/issues"
+    "url": "https://github.com/Jogzh/ai-vibe-composer/issues"
   }
 }

@@ -19,8 +19,8 @@ const app = document.querySelector<HTMLDivElement>('#app');
 if (!app) throw new Error('页面挂载点不存在');
 app.innerHTML = `
   <header class="site-header">
-    <a class="wordmark" href="#main" aria-label="音乐创作工具箱"><span class="brand-symbol" aria-hidden="true">m/k</span> MUSIC KIT<span class="wordmark-light"> / AUDIO LAB</span></a>
-    <span class="header-note"><i aria-hidden="true"></i> 可编辑模板 · 你的作品</span>
+    <a class="wordmark" href="#main" aria-label="AI Vibe Composer · Vibe 作曲"><span class="brand-symbol" aria-hidden="true">v/c</span> AI VIBE COMPOSER<span class="wordmark-light"> / VIBE 作曲</span></a>
+    <span class="header-note"><i aria-hidden="true"></i> AI 辅助作曲 · 你的作品</span>
   </header>
   <main id="main">
     <section class="hero" aria-labelledby="track-title">
@@ -30,13 +30,13 @@ app.innerHTML = `
         <div class="cover-bottom"><span id="cover-title"></span><span class="cover-code" id="cover-code"></span></div>
       </div>
       <div class="track-intro">
-        <div class="eyebrow"><span class="tiny-line"></span> MUSIC CREATION / EDITABLE SKETCH</div>
+        <div class="eyebrow"><span class="tiny-line"></span> AI COMPOSITION / EDITABLE SKETCH</div>
         <h1 id="track-title"></h1>
         <p class="chinese-title" id="chinese-title"></p>
         <p class="description" id="track-description"></p>
         <div class="tags" id="track-tags" aria-label="曲目风格"></div>
         <dl class="track-facts"><div><dt>节奏</dt><dd><span id="bpm-fact"></span> <small>BPM</small></dd></div><div><dt>原始调性</dt><dd id="key-fact">—</dd></div><div><dt>完整结构</dt><dd><span id="bars-fact"></span> <small>小节</small></dd></div></dl>
-        <div class="original-note"><span aria-hidden="true">//</span> 原创编曲 · 实录与合成音色 <span class="note-end">ORIGINAL SCORE / RECORDED & SYNTHESIZED SOUNDS.</span></div>
+        <div class="original-note"><span aria-hidden="true">//</span> AI 写谱 · 试听 · 迭代 <span class="note-end">PROMPT / CODE / LISTEN / REFINE.</span></div>
       </div>
     </section>
 
@@ -57,7 +57,7 @@ app.innerHTML = `
           <div class="config-heading"><h3 id="config-title">塑造你的声音</h3><span>EDIT THE SIGNAL</span></div>
           <fieldset id="render-controls">
             <legend class="sr-only">合成版本与参数</legend>
-            <div class="track-field"><label for="track-select">试听作品 <span>TRACK</span></label><select id="track-select"></select><p class="field-help">原创国风、舞曲与情绪配乐，完整、精华与循环三种版本。</p></div>
+            <div class="track-field"><label for="track-select">试听作品 <span>TRACK</span></label><select id="track-select"></select><p class="field-help">选择你与 AI 编写的曲目，试听完整、精华与循环版本。</p></div>
             <div class="field-heading"><span id="version-label">曲目版本</span><span>VERSION</span></div>
             <div class="version-switch" role="group" aria-labelledby="version-label"><button type="button" data-version="full" aria-pressed="true">完整 <small>FULL</small></button><button type="button" data-version="hook" aria-pressed="false">精华 <small>HOOK</small></button><button type="button" data-version="loop" aria-pressed="false">循环 <small>LOOP</small></button></div>
             <p id="version-description" class="field-help"></p>
@@ -75,7 +75,7 @@ app.innerHTML = `
     <section class="layers" aria-labelledby="layers-title"><div class="section-heading"><div><span class="section-number">02 /</span><h2 id="layers-title">拆开这段律动</h2></div><span class="section-aside">各层配合，段落展开。</span></div><div class="layer-list"><article class="layer"><div class="layer-art melody-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div><span class="layer-index">01 / MELODY</span><h3>旋律 <span>主题与应答</span></h3><p id="melody-description"></p></div></article><article class="layer"><div class="layer-art drum-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div><span class="layer-index">02 / DRUMS</span><h3>鼓 <span>节奏里的呼吸</span></h3><p id="drum-description"></p></div></article><article class="layer"><div class="layer-art bass-art" aria-hidden="true"><i></i><i></i><i></i></div><div><span class="layer-index">03 / BASS</span><h3>低音 <span>托住情绪</span></h3><p id="bass-description"></p></div></article></div></section>
     <section id="mix-tracks" class="mix-tracks" aria-labelledby="mix-title" hidden><div class="section-heading"><div><span class="section-number">03 /</span><h2 id="mix-title">编曲声部</h2></div><span id="mix-count" class="section-aside"></span></div><p class="field-help">亮起的段落表示该声部有演奏。可以在工作台单独试听，或移除一层比较。</p><div id="mix-track-list" class="mix-track-list"></div></section>
   </main>
-  <footer><span class="footer-brand" id="footer-title"></span><span>原创编曲 / 合成音色 · 请以舒适音量聆听</span><a href="./palette.html">声音素材库 ↗</a><a href="#main">回到顶部 ↑</a></footer>
+  <footer><span class="footer-brand" id="footer-title"></span><span>Vibe 作曲 · 请以舒适音量聆听</span><a href="./palette.html">声音素材库 ↗</a><a href="https://github.com/Jogzh/ai-vibe-composer/blob/main/docs/ai-composition.md">AI 作曲指南 ↗</a><a href="#main">回到顶部 ↑</a></footer>
 `;
 
 function element<T extends HTMLElement>(selector: string): T {
@@ -151,7 +151,7 @@ const productionCopy: Record<string, { coverId: string; melody: string; drums: s
 function syncTrack(): void {
   const { meta, arrangement } = selectedTrack;
   const styleName = { 'guofeng-club': '国风 DJ', 'cinematic-guofeng': '国风交响流行', 'emotional-pop': '电子流行' }[selectedTrack.production];
-  element('.header-note').innerHTML = `<i aria-hidden="true"></i> ${styleName}模板 · ${meta.title}`;
+  element('.header-note').innerHTML = `<i aria-hidden="true"></i> ${styleName} · AI 作曲`;
   const copy = productionCopy[meta.id] ?? productionCopy[selectedTrack.production];
   const bars = arrangement.reduce((sum, section) => sum + section.bars, 0);
   const [first, ...rest] = meta.subtitle.split(' ');
@@ -174,9 +174,8 @@ function syncTrack(): void {
   element('#bass-description').textContent = copy.bass;
   trackSelect.value = meta.id;
   element('#export-format').textContent = selectedTrack.production === 'guofeng-club' ? '立体声 / 48 kHz / 24 bit PCM' : '立体声 / 44.1 kHz / 16 bit PCM';
-  document.title = `${meta.subtitle} / ${meta.title}`;
-  document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
-  element('.original-note').innerHTML = '<span aria-hidden="true">//</span> 原创编曲 · 可复用合成音色配方 <span class="note-end">ORIGINAL SCORE / SYNTHESIZED SOUND RECIPES.</span>';
+  document.title = `${meta.title} · AI Vibe Composer / Vibe 作曲`;
+  document.querySelector('meta[name="description"]')?.setAttribute('content', `AI Vibe Composer · Vibe 作曲 / AI-assisted music composition. ${meta.description}`);
   syncMixTracks();
 }
 

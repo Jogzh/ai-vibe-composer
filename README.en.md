@@ -1,12 +1,32 @@
-# Music Creation Toolkit
+# AI Vibe Composer · AI Music Composition Toolkit
 
 **English** · [简体中文](README.md)
 
-[![CI](https://github.com/Jogzh/music-creation-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/Jogzh/music-creation-toolkit/actions/workflows/ci.yml)
+[![CI](https://github.com/Jogzh/ai-vibe-composer/actions/workflows/ci.yml/badge.svg)](https://github.com/Jogzh/ai-vibe-composer/actions/workflows/ci.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Audio: mixed licenses](https://img.shields.io/badge/audio-CC0%20%2F%20CC%20BY-green.svg)](docs/assets.md)
 
-**Create your own music with code and reusable sounds.** An open-source music production toolkit for original composition, procedural audio, sound design, game loops and video BGM. Includes Tone.js / Web Audio synthesis, TypeScript arrangement recipes, Python audio DSP, licensed sample libraries, CC0 drum loops, a browser audition player and offline MP3 / WAV export.
+**Describe your music, let an AI coding agent write the score, then listen and export WAV / MP3.** An open-source toolkit for AI-assisted music composition, AI music generation through code, vibe coding, game soundtracks and video BGM. Melodies, chords and arrangements remain editable TypeScript; Tone.js / Web Audio renders the audio, with licensed sounds and optional Python DSP.
+
+[AI composition workflow](docs/ai-composition.md) · [Copyable prompts](PROMPTS.md) · [Score guide](docs/getting-started.md) · [Sounds and licenses](docs/assets.md)
+
+The workflow is **prompt → AI-written score and arrangement code → local audio rendering → listening and revision**. Bring your own coding assistant or LLM. This repository does not bundle a neural text-to-music model. Playback and WAV rendering run locally; your chosen AI assistant has its own setup and requirements.
+
+## Start composing with AI
+
+After setup, give an assistant that can edit this repository and run commands this prompt:
+
+```text
+Read AGENTS.md and docs/ai-composition.md. Create an original instrumental game loop:
+bright, 120 BPM, C major, 16 bars, with space between melodic phrases.
+Render an 8-bar draft for feedback before expanding. Add src/tracks/my-loop.ts and register it.
+Keep melody, harmony, sections and hook/loop edits consistent. Use supported production recipes
+and licensed sounds; implement any new timbres explicitly. Run the relevant checks and export
+a playable WAV under artifacts/my-loop. Report the output path, sample credits and measurements.
+State whether you actually listened, then use my listening feedback to revise.
+```
+
+MP3 export additionally needs FFmpeg. If your assistant only provides code, apply it and run the [export commands](docs/mp3-export.md) yourself. See [bilingual prompts](PROMPTS.md) for composition, arrangement revision and delivery.
 
 The repository contains reusable tools and sound assets. Finished songs, song-specific scores/scripts, source recordings, vocal stems and previous Git history are excluded. The default eight-bar `starter` is an editable exercise. The sample library includes reusable eight-bar loops and short asset previews.
 
@@ -17,8 +37,8 @@ Requires **Node.js >=22.12**, npm and a Web Audio browser. Browser playback and 
 Choose **Use this template** on GitHub to start your own repository, or clone:
 
 ```sh
-git clone https://github.com/Jogzh/music-creation-toolkit.git
-cd music-creation-toolkit
+git clone https://github.com/Jogzh/ai-vibe-composer.git
+cd ai-vibe-composer
 npm ci
 npm run dev
 ```
@@ -28,7 +48,7 @@ Open the URL printed by Vite:
 - `/`: audition your editable arrangement; change BPM, transposition, seed and full / hook / loop versions; download WAV.
 - `/palette.html`: browse, search, audition, loop and download sound assets.
 
-Edit [`src/tracks/starter.ts`](src/tracks/starter.ts): `hook` contains melody events, `harmony` contains root notes and chord voicings, and `arrangement` defines sections. Register a new file in [`registry.ts`](src/tracks/registry.ts). See the bilingual [creation guide](docs/getting-started.md).
+Use the AI prompt above, or edit [`src/tracks/starter.ts`](src/tracks/starter.ts) manually: `hook` contains melody events, `harmony` contains root notes and chord voicings, and `arrangement` defines sections. Register a new file in [`registry.ts`](src/tracks/registry.ts). See the bilingual [AI workflow](docs/ai-composition.md) and [score guide](docs/getting-started.md).
 
 ## Sounds and licenses
 

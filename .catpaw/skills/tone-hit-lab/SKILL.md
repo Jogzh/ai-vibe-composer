@@ -1,11 +1,11 @@
 ---
 name: tone-hit-lab
-description: 使用 Music Creation Toolkit 的声音资产、Tone.js 编曲配方和 Python DSP，帮助创作者写自己的音乐、试听并导出 MP3/WAV。
+description: 使用 AI Vibe Composer（Vibe 作曲）的声音资产、Tone.js 编曲配方和 Python DSP，进行 AI 辅助作曲、试听迭代与 MP3/WAV 导出。
 ---
 
 # 音乐创作工作流
 
-1. 先读根目录 AGENTS.md、README.md、docs/getting-started.md 和 docs/assets.md。
+1. 先读根目录 AGENTS.md、README.md、docs/ai-composition.md、docs/getting-started.md 和 docs/assets.md；PROMPTS.md 提供双语创作请求。
 2. 用途、情绪、BPM、长度与核心音色决定编曲。默认 starter 是可替换练习，不是既有成品。
 3. 在 src/tracks/ 新建 TrackDefinition 并加入 registry；hook、harmony、arrangement、edits 必须一致。
 4. 选用 emotional-pop、cinematic-guofeng 或 guofeng-club 的实际声音配方。增加风格需同步类型、校验、编曲、音源和测试，不能只改标签。

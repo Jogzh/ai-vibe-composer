@@ -1,6 +1,8 @@
 # 贡献 / Contributing
 
-欢迎贡献可复用音色、合成配方、音频工具、文档和修复。Welcome reusable sounds, synthesis recipes, audio tools, documentation and fixes.
+欢迎为 AI Vibe Composer 贡献可复用音色、合成配方、音频工具、AI 作曲工作流、双语提示词、文档和修复。Welcome reusable sounds, synthesis recipes, audio tools, AI composition workflows, bilingual prompts, documentation and fixes.
+
+提示词请链接到真实可用的字段、配方与导出命令，明确所需环境；不要把未实现的风格、人声或模型能力写成现有功能。Prompts should reference supported fields, recipes and commands, with accurate requirements and deliverables. See [the AI workflow](docs/ai-composition.md).
 
 1. 从模板创建仓库或 fork，安装 Node.js >=22.12 并运行 `npm ci`。
 2. 代码提交标题与说明使用中文，技术名称可保留英文。Use Chinese commit titles/bodies; technical names may remain English.

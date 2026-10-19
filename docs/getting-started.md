@@ -1,5 +1,7 @@
 # 从八小节开始 / Create your first sketch
 
+想让 AI 编程助手写谱？先看 [AI 作曲工作流 / AI composition workflow](ai-composition.md) 和[双语提示词 / Prompts](../PROMPTS.md)。本页解释实际谱面数据与编曲方式。
+
 ## 1. 运行 / Run
 
 ```sh

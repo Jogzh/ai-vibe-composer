@@ -56,7 +56,7 @@ const files = (await readdir(root, { recursive: true })).filter(file => /\.(mp3|
 assert.deepEqual(assets.map(asset => asset.file).sort(), files, 'Catalog must cover every audio file exactly once');
 assert.equal(new Set(assets.map(asset => asset.id)).size, assets.length);
 for (const asset of assets) await readFile(path.join(root, asset.licenseFile));
-const output = JSON.stringify({ schemaVersion: 1, name: 'Music Creation Toolkit audio catalog',
+const output = JSON.stringify({ schemaVersion: 1, name: 'AI Vibe Composer audio catalog',
   description: '可复用声音资产 / Reusable sound assets; see per-file licenses', assets }, null, 2) + '\n';
 const target = path.join(root, 'catalog.json');
 if (process.argv.includes('--check')) {

@@ -1,20 +1,40 @@
-# Music Creation Toolkit · 开源音乐创作工具箱
+# AI Vibe Composer · Vibe 作曲
 
 [English](README.en.md) · **简体中文**
 
-[![CI](https://github.com/Jogzh/music-creation-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/Jogzh/music-creation-toolkit/actions/workflows/ci.yml)
+[![CI](https://github.com/Jogzh/ai-vibe-composer/actions/workflows/ci.yml/badge.svg)](https://github.com/Jogzh/ai-vibe-composer/actions/workflows/ci.yml)
 [![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Audio: mixed licenses](https://img.shields.io/badge/audio-CC0%20%2F%20CC%20BY-green.svg)](docs/assets.md)
 
-**用代码和可复用声音资产创作自己的音乐。** 提供 Tone.js / Web Audio 编曲与合成、Python 音频 DSP、采样库、鼓循环、音效、浏览器试听，以及离线 MP3 / WAV 导出。
+**面向 AI 编程助手的开源作曲工具箱：用自然语言描述想法，让 AI 写旋律、和弦与编曲代码，再试听并导出 WAV / MP3。** 适合 AI 辅助作曲、AI 音乐生成、Vibe Coding 音乐创作、游戏配乐与短视频 BGM。
 
-An open-source music creation toolkit for original composition, procedural audio, sound design and BGM: Tone.js, Web Audio, Python DSP, licensed samples, CC0 loops and offline audio rendering.
+An open-source **AI music composition toolkit for coding agents**. Vibe compose with an LLM: turn a prompt into editable TypeScript melodies and arrangements, then render playable audio with Tone.js / Web Audio. Includes licensed sounds, Python DSP and WAV / MP3 export.
+
+[AI 作曲工作流 / Workflow](docs/ai-composition.md) · [双语提示词 / Prompts](PROMPTS.md) · [手动写谱 / Score guide](docs/getting-started.md) · [声音与许可 / Sounds](docs/assets.md)
+
+这里的“AI 生成曲子”通过 **AI 助手编写代码 → 本地音频引擎渲染 → 听后修改** 实现。仓库提供可编辑谱面结构、声音和工具；不内置文本直出音乐的神经网络模型。播放与 WAV 渲染在本地运行，AI 助手由你自行选择和配置。
+
+## 让 AI 开始作曲
+
+安装项目后，让能读写本仓库、运行终端命令的 AI 编程助手处理下面的请求：
+
+```text
+请阅读 AGENTS.md 和 docs/ai-composition.md，用当前仓库创作一段原创游戏循环配乐：
+轻快、120 BPM、C 大调、16 小节、无歌词，旋律留出呼吸，避免照搬现有歌曲。
+先做 8 小节草稿供试听，再扩写。新建 src/tracks/my-loop.ts 并加入 registry.ts，
+保持旋律、和弦、段落与 hook/loop 裁切一致。使用实际支持的配方和有许可的声音；
+如需新音色，明确实现。运行检查，导出 artifacts/my-loop 下的可播放 WAV，
+报告文件位置、素材署名和客观检查；实际没听过就说明，等待我的听后反馈。
+```
+
+需要 MP3 时先安装 FFmpeg；没有命令执行能力的助手可给出代码修改，由你按[导出指南](docs/mp3-export.md)运行。更多[中英文作曲与修改提示词](PROMPTS.md)可直接复制。
 
 ## 适合做什么
 
 - 原创音乐、短视频 BGM、游戏循环配乐、音效和编曲实验。
 - 用 TypeScript 写旋律、和弦、段落与音色；用 Python 处理自己的录音。
-- 用 DAW、Web Audio 采样器或 AI 编程助手复用声音资产与生成脚本。
+- 让 AI agent / LLM 把自然语言需求转成可审查、可修改、可重复渲染的乐谱代码。
+- 用 DAW 或 Web Audio 采样器复用声音资产与生成脚本。
 - 从电子流行、国风交响、国风 Club 配方，或 Lo-fi / UK Garage / Ambient 循环开始写自己的作品。
 
 项目只保留**通用工具与声音资产**。没有已有歌曲的成品、专属谱面、制作脚本、源录音、人声分轨或历史提交。默认 `starter` 是八小节技术练习；声音库里的八小节循环与短试听是可复用素材，许可随目录保留。
@@ -26,8 +46,8 @@ An open-source music creation toolkit for original composition, procedural audio
 点击 GitHub 的 **Use this template** 创建自己的仓库，或克隆本项目：
 
 ```sh
-git clone https://github.com/Jogzh/music-creation-toolkit.git
-cd music-creation-toolkit
+git clone https://github.com/Jogzh/ai-vibe-composer.git
+cd ai-vibe-composer
 npm ci
 npm run dev
 ```
@@ -37,7 +57,7 @@ npm run dev
 - `/`：可编辑编曲的试听台，支持 BPM、移调、seed、full / hook / loop 和 WAV 下载。
 - `/palette.html`：声音素材库，分类试听、循环播放、按名称搜索和下载。
 
-**第一首自己的作品：**修改 [`src/tracks/starter.ts`](src/tracks/starter.ts) 的 `hook` 音符、`harmony` 和弦与 `arrangement` 段落，浏览器更新后试听；复制为新文件时，将其加入 [`registry.ts`](src/tracks/registry.ts)。详见[创作教程](docs/getting-started.md)。
+**第一首自己的作品：**把上面的提示词交给 AI，或手动修改 [`src/tracks/starter.ts`](src/tracks/starter.ts) 的 `hook` 音符、`harmony` 和弦与 `arrangement` 段落，浏览器更新后试听；复制为新文件时，将其加入 [`registry.ts`](src/tracks/registry.ts)。详见 [AI 作曲工作流](docs/ai-composition.md)与[创作教程](docs/getting-started.md)。
 
 ## 声音资产与许可
 
@@ -105,6 +125,8 @@ src/audio/        WAV 编码与客观测量
 public/audio/     83 个音频文件、目录和来源许可
 scripts/          Chromium 导出、Python DSP、资产生成与索引
 docs/             创作、采样、Python 与导出指南
+AGENTS.md         AI 编程助手的作曲约定与操作入口
+PROMPTS.md        中英文作曲、编曲修改和导出提示词
 tests/            参数、音频编码、DSP 与浏览器检查
 ```
 
